@@ -1,21 +1,47 @@
-export async function loadKnowledge() {
+// =======================================
+// K44DDK AI
+// Loader
+// Version 1.1.0
+// =======================================
 
-    try {
+window.K44 = window.K44 || {};
 
-        const response = await fetch("../database/knowledge.json");
+K44.Loader = {
 
-        if (!response.ok) {
-            throw new Error("Không đọc được knowledge.json");
+    data: [],
+
+    async load() {
+
+        try {
+
+            const response = await fetch("../database/knowledge.json");
+
+            if (!response.ok) {
+
+                throw new Error("Cannot load knowledge.json");
+
+            }
+
+            this.data = await response.json();
+
+            console.log(
+                "Knowledge Loaded:",
+                this.data.length,
+                "records"
+            );
+
+            return this.data;
+
+        } catch (error) {
+
+            console.error(error);
+
+            this.data = [];
+
+            return [];
+
         }
-
-        return await response.json();
-
-    } catch (error) {
-
-        console.error(error);
-
-        return [];
 
     }
 
-}
+};
