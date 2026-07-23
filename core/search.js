@@ -1,25 +1,28 @@
-// =============================
-// K44DDK Search Engine
-// Version 0.3
-// =============================
-
 class SearchEngine {
 
-    constructor(data = []) {
-        this.data = data;
+    constructor(data){
+
+        this.data=data;
+
     }
 
-    search(keyword) {
+    find(keyword){
 
-        keyword = keyword.toLowerCase().trim();
+        keyword=keyword.toLowerCase();
 
-        return this.data.filter(item => {
+        for(const item of this.data){
 
-            return JSON.stringify(item)
-                .toLowerCase()
-                .includes(keyword);
+            const text=JSON.stringify(item).toLowerCase();
 
-        });
+            if(text.includes(keyword)){
+
+                return item;
+
+            }
+
+        }
+
+        return null;
 
     }
 
