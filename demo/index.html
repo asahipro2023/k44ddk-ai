@@ -1,19 +1,45 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>K44DDK AI Demo</title>
 </head>
+
 <body>
 
     <h1>🎓 K44DDK AI Demo</h1>
 
-    <p>
-        Đây là trang thử nghiệm chatbot AI dành cho cộng đồng K44DDK.
-    </p>
+    <p>Đây là trang thử nghiệm chatbot AI.</p>
 
+    <!-- Engine -->
+    <script src="../engine/loader.js"></script>
+    <script src="../engine/parser.js"></script>
+    <script src="../engine/search.js"></script>
+    <script src="../engine/ranking.js"></script>
+    <script src="../engine/answer.js"></script>
+    <script src="../engine/engine.js"></script>
+
+    <!-- Widget -->
     <script src="../widget/k44ddk-ai.js"></script>
 
+    <!-- Test Engine -->
+    <script>
+
+        window.addEventListener("load", async function () {
+
+            await K44.Engine.init();
+
+            const answer = K44.Engine.ask("Hoàng Văn Trọng");
+
+            console.log(answer);
+
+            alert(answer);
+
+        });
+
+    </script>
+
 </body>
+
 </html>

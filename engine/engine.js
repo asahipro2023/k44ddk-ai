@@ -1,21 +1,26 @@
-import { loadKnowledge } from "./loader.js";
+// =======================================
+// K44DDK AI
+// Engine
+// Version 1.1.3
+// =======================================
 
-export default class Engine {
+window.K44 = window.K44 || {};
 
-    constructor() {
+K44.Engine = {
 
-        this.data = [];
+    async init() {
 
-    }
+        await K44.Loader.load();
 
-    async load() {
+        console.log("K44 Engine Ready");
 
-        this.data = await loadKnowledge();
+    },
 
-        console.log("Knowledge Loaded");
+  ask(question) {
 
-        console.log(this.data);
+    const results = K44.Search.find(question);
 
-    }
+    return K44.Answer.create(results);
 
 }
+};

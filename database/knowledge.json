@@ -1,0 +1,25 @@
+[
+  {
+    "id": "P0001",
+    "type": "person",
+    "title": "Hoàng Văn Trọng",
+    "content": "Cựu sinh viên lớp K44DDK. Đây là hồ sơ mẫu để xây dựng K44DDK AI.",
+    "keywords": [
+      "hoàng văn trọng",
+      "hoang van trong",
+      "trọng",
+      "k44ddk"
+    ],
+    "tags": [
+      "Cựu sinh viên",
+      "K44DDK"
+    ],
+    "author": "Nguyễn Khắc Trình",
+    "source": {
+      "type": "blog",
+      "url": ""
+    },
+    "created": "2026-07-23",
+    "updated": "2026-07-23"
+  }
+]
